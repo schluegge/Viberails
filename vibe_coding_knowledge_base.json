@@ -1,0 +1,260 @@
+{
+  "knowledge_base": "vibe_coding_risk_model",
+  "version": "1.0.0",
+  "scope": {
+    "personas": [
+      {
+        "id": "persona_beginner_senior",
+        "description": "Older first-time computer users (for example, a 76-year-old grandma).",
+        "experience_level": "none"
+      },
+      {
+        "id": "persona_beginner_kid",
+        "description": "Kids building for fun.",
+        "experience_level": "none"
+      },
+      {
+        "id": "persona_hobbyist",
+        "description": "Self-directed hobby builders.",
+        "experience_level": "low_to_medium"
+      },
+      {
+        "id": "persona_advanced_builder",
+        "description": "Builders targeting state-of-the-art products.",
+        "experience_level": "medium_to_high"
+      }
+    ],
+    "goals": [
+      "hobby_project",
+      "personal_utility",
+      "state_of_the_art_product"
+    ],
+    "platforms": [
+      "web",
+      "mobile_ios",
+      "mobile_android",
+      "desktop",
+      "backend_api",
+      "embedded_iot",
+      "game_console",
+      "wearable",
+      "voice_assistant"
+    ]
+  },
+  "risk_catalog": [
+    {
+      "id": "risk_001",
+      "title": "Unverified generated code",
+      "what_can_go_wrong": [
+        "Code compiles but does the wrong thing.",
+        "Silent data corruption.",
+        "Security vulnerabilities are introduced."
+      ],
+      "likelihood": "high",
+      "impact": "high",
+      "applies_to_personas": [
+        "persona_beginner_senior",
+        "persona_beginner_kid",
+        "persona_hobbyist",
+        "persona_advanced_builder"
+      ],
+      "applies_to_platforms": [
+        "web",
+        "mobile_ios",
+        "mobile_android",
+        "desktop",
+        "backend_api",
+        "embedded_iot",
+        "game_console",
+        "wearable",
+        "voice_assistant"
+      ],
+      "guardrails": [
+        "Require executable tests for generated logic before release.",
+        "Require static analysis and dependency vulnerability checks.",
+        "Require human review for auth, payments, data, and networking code."
+      ]
+    },
+    {
+      "id": "risk_002",
+      "title": "Prompt ambiguity",
+      "what_can_go_wrong": [
+        "Agent optimizes for wrong success criteria.",
+        "Critical constraints are ignored.",
+        "Features are implemented inconsistently across platforms."
+      ],
+      "likelihood": "high",
+      "impact": "medium",
+      "applies_to_personas": [
+        "persona_beginner_senior",
+        "persona_beginner_kid",
+        "persona_hobbyist",
+        "persona_advanced_builder"
+      ],
+      "applies_to_platforms": [
+        "web",
+        "mobile_ios",
+        "mobile_android",
+        "desktop",
+        "backend_api",
+        "embedded_iot",
+        "game_console",
+        "wearable",
+        "voice_assistant"
+      ],
+      "guardrails": [
+        "Require structured prompts with objective, constraints, and acceptance tests.",
+        "Require the agent to restate the requested outcome before coding.",
+        "Require explicit non-goals to avoid scope drift."
+      ]
+    },
+    {
+      "id": "risk_003",
+      "title": "Unsafe handling of secrets and personal data",
+      "what_can_go_wrong": [
+        "API keys are hardcoded and leaked.",
+        "Personal data is logged or exposed.",
+        "Unencrypted transport or storage is used."
+      ],
+      "likelihood": "medium",
+      "impact": "high",
+      "applies_to_personas": [
+        "persona_beginner_senior",
+        "persona_beginner_kid",
+        "persona_hobbyist",
+        "persona_advanced_builder"
+      ],
+      "applies_to_platforms": [
+        "web",
+        "mobile_ios",
+        "mobile_android",
+        "desktop",
+        "backend_api",
+        "embedded_iot",
+        "game_console",
+        "wearable",
+        "voice_assistant"
+      ],
+      "guardrails": [
+        "Never commit secrets; use secure secret stores.",
+        "Minimize collected data and redact logs by default.",
+        "Enforce encryption in transit and at rest where applicable."
+      ]
+    },
+    {
+      "id": "risk_004",
+      "title": "Inaccessible or unusable UX",
+      "what_can_go_wrong": [
+        "First-time users cannot complete core flows.",
+        "Interfaces are not readable or understandable.",
+        "Keyboard/screen-reader support is missing."
+      ],
+      "likelihood": "medium",
+      "impact": "medium",
+      "applies_to_personas": [
+        "persona_beginner_senior",
+        "persona_beginner_kid"
+      ],
+      "applies_to_platforms": [
+        "web",
+        "mobile_ios",
+        "mobile_android",
+        "desktop",
+        "wearable",
+        "voice_assistant"
+      ],
+      "guardrails": [
+        "Require simple language, clear feedback, and guided onboarding.",
+        "Require accessibility checks (contrast, focus, labels, navigation).",
+        "User-test with at least one true beginner persona before release."
+      ]
+    },
+    {
+      "id": "risk_005",
+      "title": "Platform mismatch",
+      "what_can_go_wrong": [
+        "Solution relies on APIs unavailable on target device.",
+        "Performance is unacceptable on low-end hardware.",
+        "Offline/online assumptions break real usage."
+      ],
+      "likelihood": "medium",
+      "impact": "high",
+      "applies_to_personas": [
+        "persona_hobbyist",
+        "persona_advanced_builder"
+      ],
+      "applies_to_platforms": [
+        "web",
+        "mobile_ios",
+        "mobile_android",
+        "desktop",
+        "backend_api",
+        "embedded_iot",
+        "game_console",
+        "wearable",
+        "voice_assistant"
+      ],
+      "guardrails": [
+        "Declare target platform constraints before implementation.",
+        "Test on representative low-end and high-end devices.",
+        "Define failure modes for offline, latency, and partial connectivity."
+      ]
+    },
+    {
+      "id": "risk_006",
+      "title": "No release quality gate",
+      "what_can_go_wrong": [
+        "Prototype code is shipped as production code.",
+        "Breaking changes reach users without rollback.",
+        "Incidents cannot be diagnosed due to missing observability."
+      ],
+      "likelihood": "medium",
+      "impact": "high",
+      "applies_to_personas": [
+        "persona_hobbyist",
+        "persona_advanced_builder"
+      ],
+      "applies_to_platforms": [
+        "web",
+        "mobile_ios",
+        "mobile_android",
+        "desktop",
+        "backend_api",
+        "embedded_iot",
+        "game_console",
+        "wearable",
+        "voice_assistant"
+      ],
+      "guardrails": [
+        "Define required checks for each goal type (hobby vs state-of-the-art).",
+        "Require staged release with rollback strategy.",
+        "Require baseline logging, monitoring, and error reporting."
+      ]
+    }
+  ],
+  "goal_quality_gates": {
+    "hobby_project": {
+      "minimum_requirements": [
+        "No hardcoded secrets",
+        "Basic functional test of core flow",
+        "Clear disclaimer that reliability is best effort"
+      ]
+    },
+    "personal_utility": {
+      "minimum_requirements": [
+        "Automated tests for critical paths",
+        "Backup and recovery plan for user data",
+        "Authentication for private data"
+      ]
+    },
+    "state_of_the_art_product": {
+      "minimum_requirements": [
+        "Threat model and security review",
+        "Comprehensive CI with tests and static analysis",
+        "Performance and accessibility budgets",
+        "Observability and incident response runbook",
+        "Cross-platform compatibility matrix"
+      ]
+    }
+  }
+}
