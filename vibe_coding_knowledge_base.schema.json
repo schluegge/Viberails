@@ -30,7 +30,10 @@
             "properties": {
               "id": { "type": "string" },
               "description": { "type": "string" },
-              "experience_level": { "type": "string" }
+              "experience_level": {
+                "type": "string",
+                "enum": ["none", "low_to_medium", "medium_to_high"]
+              }
             }
           }
         },
@@ -69,8 +72,14 @@
             "minItems": 1,
             "items": { "type": "string" }
           },
-          "likelihood": { "type": "string" },
-          "impact": { "type": "string" },
+          "likelihood": {
+            "type": "string",
+            "enum": ["low", "medium", "high"]
+          },
+          "impact": {
+            "type": "string",
+            "enum": ["low", "medium", "high"]
+          },
           "applies_to_personas": {
             "type": "array",
             "minItems": 1,
@@ -91,7 +100,7 @@
     },
     "goal_quality_gates": {
       "type": "object",
-      "required": ["hobby_project", "personal_utility", "state_of_the_art_product"],
+      "minProperties": 1,
       "additionalProperties": {
         "type": "object",
         "required": ["minimum_requirements"],
