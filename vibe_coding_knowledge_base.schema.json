@@ -117,14 +117,31 @@
             "type": "array",
             "minItems": 1,
             "items": {
-              "type": "string"
+              "type": "string",
+              "enum": [
+                "persona_beginner_senior",
+                "persona_beginner_kid",
+                "persona_hobbyist",
+                "persona_advanced_builder"
+              ]
             }
           },
           "applies_to_platforms": {
             "type": "array",
             "minItems": 1,
             "items": {
-              "type": "string"
+              "type": "string",
+              "enum": [
+                "web",
+                "mobile_ios",
+                "mobile_android",
+                "desktop",
+                "backend_api",
+                "embedded_iot",
+                "game_console",
+                "wearable",
+                "voice_assistant"
+              ]
             }
           },
           "guardrails": {
@@ -161,7 +178,8 @@
           "personal_utility",
           "state_of_the_art_product"
         ]
-      }
+      },
+      "$comment": "Goal keys are intentionally constrained to the canonical goals currently supported by scope.goals in vibe_coding_knowledge_base.json and should be updated together."
     }
   }
 }
