@@ -500,7 +500,7 @@
         "Comprehensive CI with tests and static analysis",
         "Performance and accessibility budgets",
         "Observability and incident response runbook",
-        "Cross-platform compatibility matrix"
+        "Define the supported platforms and environments, and verify compatibility across the combinations the product claims to support."
       ]
     }
   }
