@@ -423,7 +423,7 @@
         "voice_assistant"
       ],
       "guardrails": [
-        "Define required checks for each goal type (hobby vs state-of-the-art).",
+        "Define required release verification checks using a risk-based approach that accounts for applicability and feasibility.",
         "Use a staged or progressive rollout when the deployment platform supports incremental exposure and the release risk warrants it.",
         "Maintain a documented recovery plan for unsuccessful releases, using rollback to a known good state when rollback is safe and supported, or a tested fix-forward path when it is not.",
         "Instrument released software to emit the telemetry needed to diagnose operational failures, selecting logs, metrics, traces, or error events according to the system architecture and failure modes.",
