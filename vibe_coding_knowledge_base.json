@@ -490,7 +490,7 @@
     "personal_utility": {
       "minimum_requirements": [
         "Automated tests for critical paths",
-        "Backup and recovery plan for user data",
+        "When loss of user data would violate defined recovery objectives and the data cannot be acceptably reproduced from another source, maintain backups and periodically test restoration.",
         "Protect private data from unauthorized access using controls appropriate to the application's trust boundaries, including authentication when access decisions depend on user identity."
       ]
     },
