@@ -247,6 +247,7 @@
       ],
       "guardrails": [
         "Do not commit secrets to source control.",
+        "When runtime or deployment secrets are required, use a dedicated secrets-management mechanism rather than hardcoding them.",
         "Minimize collected data and redact logs by default.",
         "Enforce encryption in transit and at rest where applicable."
       ],
