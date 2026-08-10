@@ -500,7 +500,8 @@
         "Perform risk-based security verification using applicable review, analysis, and testing techniques before release.",
         "Use continuous integration to automatically run the project's required test suite and applicable static analysis on code changes.",
         "Performance and accessibility budgets",
-        "Observability and incident response runbook",
+        "Verify that released software provides the telemetry needed to diagnose operational failures and assess operational health.",
+        "Establish, communicate, and maintain incident response procedures appropriate to plausible operational and security incidents, including roles, communication, escalation, and recovery actions as applicable.",
         "Define the supported platforms and environments, and verify compatibility across the combinations the product claims to support."
       ]
     }
