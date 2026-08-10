@@ -94,7 +94,7 @@
       "id": "risk_002",
       "title": "Prompt ambiguity",
       "what_can_go_wrong": [
-        "Agent optimizes for wrong success criteria.",
+        "Ambiguous requirements can lead to functionally divergent generated implementations.",
         "Generated code can fail to satisfy stated constraints.",
         "Features are implemented inconsistently across platforms."
       ],
