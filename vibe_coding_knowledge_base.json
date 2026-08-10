@@ -234,6 +234,20 @@
         "Require simple language, clear feedback, and guided onboarding.",
         "Require accessibility checks (contrast, focus, labels, navigation).",
         "User-test with at least one true beginner persona before release."
+      ],
+      "evidence": [
+        {
+          "id": "evidence_risk_004_chatgpt_web_accessibility_2024",
+          "source_type": "research",
+          "title": "Does ChatGPT Generate Accessible Code? Investigating Accessibility Challenges in LLM-Generated Source Code",
+          "organization_or_author": "Wajdi Aljedaani, Abdulrahman Habib, Ahmed Aljohani, Marcelo Eler, Yunhe Feng",
+          "url": "https://doi.org/10.1145/3677846.3677854",
+          "publication_or_revision_date": "2024-05-13",
+          "supports": [
+            "risk_004.what_can_go_wrong[2] — In a study where 88 web developers prompted ChatGPT to generate websites, 74 of 88 generated websites had detected accessibility issues; the reported violations included missing image alt attributes, which the authors identify as important for screen-reader users."
+          ],
+          "limitations": "Peer-reviewed W4A 2024 evidence is limited to ChatGPT-generated web code in the studied prompting setup and automated accessibility checks. It does not establish that every generated website lacks accessibility support, that keyboard support is generally missing, or that the result generalizes to current models, non-web platforms, or all accessibility requirements; 14 of 88 studied websites had no detected accessibility issues."
+        }
       ]
     },
     {
