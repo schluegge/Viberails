@@ -81,7 +81,7 @@
       "guardrails": [
         "Require executable tests for generated logic before release.",
         "Require static analysis and dependency vulnerability checks.",
-        "Require human review for auth, payments, data, and networking code."
+        "Require human review before release for generated code that affects security-sensitive behavior."
       ],
       "evidence": [
         {
