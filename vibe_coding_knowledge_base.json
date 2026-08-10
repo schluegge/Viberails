@@ -496,7 +496,8 @@
     },
     "state_of_the_art_product": {
       "minimum_requirements": [
-        "Threat model and security review",
+        "Perform threat modeling early enough to inform security design, and revisit it when material changes to architecture, data flows, trust boundaries, or threat assumptions can change the threat analysis.",
+        "Perform risk-based security verification using applicable review, analysis, and testing techniques before release.",
         "Comprehensive CI with tests and static analysis",
         "Performance and accessibility budgets",
         "Observability and incident response runbook",
