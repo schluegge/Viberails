@@ -424,7 +424,8 @@
       ],
       "guardrails": [
         "Define required checks for each goal type (hobby vs state-of-the-art).",
-        "Require staged release with rollback strategy.",
+        "Use a staged or progressive rollout when the deployment platform supports incremental exposure and the release risk warrants it.",
+        "Maintain a documented recovery plan for unsuccessful releases, using rollback to a known good state when rollback is safe and supported, or a tested fix-forward path when it is not.",
         "Require baseline logging, monitoring, and error reporting."
       ],
       "evidence": [
