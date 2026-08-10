@@ -254,7 +254,7 @@
       "id": "risk_005",
       "title": "Platform mismatch",
       "what_can_go_wrong": [
-        "Solution relies on APIs unavailable on target device.",
+        "LLMs can misidentify conflicting Android API levels for compatibility bugs.",
         "Performance is unacceptable on low-end hardware.",
         "Offline/online assumptions break real usage."
       ],
