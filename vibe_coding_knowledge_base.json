@@ -162,7 +162,6 @@
           "title": "CodexLeaks: Privacy Leaks from Code Generation Language Models in GitHub Copilot",
           "organization_or_author": "Liang Niu, Shujaat Mirza, Zayd Maradni, Christina Pöpper",
           "url": "https://www.usenix.org/conference/usenixsecurity23/presentation/niu",
-          "publication_or_revision_date": "2023-08-01",
           "version": "GitHub Copilot using the studied Codex model",
           "supports": [
             "risk_003.what_can_go_wrong[1] — In the studied GitHub Copilot/Codex setup, generated outputs exposed sensitive personal information from training data."
