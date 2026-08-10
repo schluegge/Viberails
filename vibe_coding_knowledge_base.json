@@ -316,6 +316,7 @@
       "id": "risk_006",
       "title": "No release quality gate",
       "what_can_go_wrong": [
+        "AI-generated code can be shipped to production without line-by-line manual verification.",
         "Breaking changes reach users without rollback.",
         "Missing telemetry can hinder incident diagnosis and troubleshooting."
       ],
@@ -343,13 +344,25 @@
       ],
       "evidence": [
         {
+          "id": "evidence_risk_006_newrelic_unverified_production_2026",
+          "source_type": "empirical_evidence",
+          "title": "The 2026 State of AI Coding Report",
+          "organization_or_author": "New Relic; survey conducted by Hanover Research",
+          "url": "https://newrelic.com/resources/report/2026-state-of-ai-coding",
+          "publication_or_revision_date": "2026-06-10",
+          "supports": [
+            "risk_006.what_can_go_wrong[0] - In the 2026 Hanover Research survey commissioned by New Relic, 62% of surveyed technology leaders reported that their engineering teams often trusted AI-generated code enough to ship it to production without line-by-line manual verification."
+          ],
+          "limitations": "Vendor-commissioned self-report survey of 200 U.S.-based full-time technology decision-makers in IT/Engineering at upper-mid-market and enterprise companies using generative and agentic AI in software engineering. It does not establish that the shipped code was prototype code, that every deployment lacked other quality gates, or that the result generalizes to smaller organizations, other countries, all teams, or future practice."
+        },
+        {
           "id": "evidence_risk_006_opentelemetry_observability_primer",
           "source_type": "official_documentation",
           "title": "Observability primer",
           "organization_or_author": "OpenTelemetry",
           "url": "https://opentelemetry.io/docs/concepts/observability-primer/",
           "supports": [
-            "risk_006.what_can_go_wrong[1] — OpenTelemetry states that observability enables troubleshooting and answering why system behavior occurs, and that applications must emit telemetry signals such as traces, metrics, and logs to support those questions; missing telemetry can therefore hinder diagnosis and troubleshooting."
+            "risk_006.what_can_go_wrong[2] — OpenTelemetry states that observability enables troubleshooting and answering why system behavior occurs, and that applications must emit telemetry signals such as traces, metrics, and logs to support those questions; missing telemetry can therefore hinder diagnosis and troubleshooting."
           ],
           "limitations": "Official conceptual documentation, not an empirical study of AI-generated software or a proof that incidents become impossible to diagnose. Other evidence sources can sometimes permit diagnosis even when application telemetry is incomplete; this supports `can hinder`, not the former absolute `cannot be diagnosed` wording."
         }
