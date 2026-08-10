@@ -171,8 +171,7 @@
       ],
       "guardrails": [
         "Require structured prompts with objective, constraints, and acceptance tests.",
-        "Require the agent to restate the requested outcome before coding.",
-        "Require explicit non-goals to avoid scope drift."
+        "Require the agent to restate the requested outcome before coding."
       ],
       "evidence": [
         {
