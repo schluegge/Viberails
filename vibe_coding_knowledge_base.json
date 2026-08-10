@@ -251,35 +251,6 @@
       ]
     },
     {
-      "id": "risk_005",
-      "title": "Platform mismatch",
-      "what_can_go_wrong": [
-        "Offline/online assumptions break real usage."
-      ],
-      "likelihood": "medium",
-      "impact": "high",
-      "applies_to_personas": [
-        "persona_hobbyist",
-        "persona_advanced_builder"
-      ],
-      "applies_to_platforms": [
-        "web",
-        "mobile_ios",
-        "mobile_android",
-        "desktop",
-        "backend_api",
-        "embedded_iot",
-        "game_console",
-        "wearable",
-        "voice_assistant"
-      ],
-      "guardrails": [
-        "Declare target platform constraints before implementation.",
-        "Test on representative low-end and high-end devices.",
-        "Define failure modes for offline, latency, and partial connectivity."
-      ]
-    },
-    {
       "id": "risk_006",
       "title": "No release quality gate",
       "what_can_go_wrong": [
