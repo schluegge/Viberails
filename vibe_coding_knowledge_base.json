@@ -250,7 +250,8 @@
         "When runtime or deployment secrets are required, use a dedicated secrets-management mechanism rather than hardcoding them.",
         "For personal data, collect only what is necessary for the application's stated purpose.",
         "Do not record secrets or sensitive personal data directly in logs; remove, mask, sanitize, hash, or encrypt such values before logging when they are needed.",
-        "Enforce encryption in transit and at rest where applicable."
+        "Protect sensitive data in transit with cryptographic transport protection appropriate to the protocol and threat model.",
+        "Protect stored sensitive data with cryptographic mechanisms selected according to the storage context and threat model."
       ],
       "evidence": [
         {
