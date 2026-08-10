@@ -273,7 +273,7 @@
       "what_can_go_wrong": [
         "Prototype code is shipped as production code.",
         "Breaking changes reach users without rollback.",
-        "Incidents cannot be diagnosed due to missing observability."
+        "Missing telemetry can hinder incident diagnosis and troubleshooting."
       ],
       "likelihood": "medium",
       "impact": "high",
