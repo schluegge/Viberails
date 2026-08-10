@@ -96,7 +96,7 @@
       "what_can_go_wrong": [
         "Ambiguous requirements can lead to functionally divergent generated implementations.",
         "Generated code can fail to satisfy stated constraints.",
-        "Features are implemented inconsistently across platforms."
+        "Generated-code models can fail to identify or resolve ambiguous requirements autonomously."
       ],
       "likelihood": "high",
       "impact": "medium",
@@ -142,7 +142,8 @@
           "url": "https://arxiv.org/abs/2604.21505",
           "publication_or_revision_date": "2026-04-23",
           "supports": [
-            "risk_002.what_can_go_wrong[0] — In the studied Orchid benchmark, evaluated LLMs frequently produced functionally divergent implementations for the same ambiguous requirement."
+            "risk_002.what_can_go_wrong[0] — In the studied Orchid benchmark, evaluated LLMs frequently produced functionally divergent implementations for the same ambiguous requirement.",
+            "risk_002.what_can_go_wrong[2] — In the studied Orchid benchmark, evaluated LLMs could fail to identify or resolve ambiguity autonomously."
           ],
           "limitations": "Evidence is limited to the studied function-level benchmark and evaluated models; Orchid uses ambiguity variants across lexical, syntactic, semantic, and vagueness categories, and not every ambiguity necessarily changes generated behavior. It does not establish universal failure across languages, platforms, models, interactive clarification workflows, or real-world projects."
         }
