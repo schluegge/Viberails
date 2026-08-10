@@ -249,7 +249,7 @@
       "id": "risk_004",
       "title": "Inaccessible or unusable UX",
       "what_can_go_wrong": [
-        "First-time users cannot complete core flows.",
+        "LLM-generated GUI applications can fail end-to-end interaction flows because of behavioral logic defects.",
         "Interfaces are not readable or understandable.",
         "LLM-generated web code can omit alternative text needed by screen-reader users."
       ],
@@ -284,6 +284,18 @@
             "risk_004.what_can_go_wrong[2] — In a study where 88 web developers prompted ChatGPT to generate websites, 74 of 88 generated websites had detected accessibility issues; the reported violations included missing image alt attributes, which the authors identify as important for screen-reader users."
           ],
           "limitations": "Peer-reviewed W4A 2024 evidence is limited to ChatGPT-generated web code in the studied prompting setup and automated accessibility checks. It does not establish that every generated website lacks accessibility support, that keyboard support is generally missing, or that the result generalizes to current models, non-web platforms, or all accessibility requirements; 14 of 88 studied websites had no detected accessibility issues."
+        },
+        {
+          "id": "evidence_risk_004_playcoder_gui_behavior_2026",
+          "source_type": "research",
+          "title": "PlayCoder: Making LLM-Generated GUI Code Playable",
+          "organization_or_author": "Zhiyuan Peng, Wei Tao, Xin Yin, Chenhao Ying, Yuan Luo, Yiwen Guo",
+          "url": "https://conf.researchr.org/details/fse-2026/fse-2026-research-papers/4/PlayCoder-Making-LLM-Generated-GUI-Code-Playable",
+          "version": "FSE 2026 Research Papers; arXiv:2604.19742v1",
+          "supports": [
+            "risk_004.what_can_go_wrong[0] â€” In the studied repository-aware GUI code-generation benchmark, generated candidates from 10 evaluated code LLMs achieved near-zero Play@3 despite high compilation rates; Play@k requires an application to complete task-oriented end-to-end GUI playthroughs without logical errors."
+          ],
+          "limitations": "FSE 2026 benchmark evidence is limited to the studied repository-aware GUI applications, languages, models, and automated LLM-based PlayTester evaluation. It does not directly measure first-time human users, beginner personas, every core user flow, all UI platforms, or current/future models. Successful generated candidates existed, and the PlayCoder repair framework improved Play@3, so this supports a possibility-scoped behavioral-flow failure rather than universal failure."
         }
       ]
     },
