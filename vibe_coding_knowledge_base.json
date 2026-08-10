@@ -293,7 +293,7 @@
           "url": "https://conf.researchr.org/details/fse-2026/fse-2026-research-papers/4/PlayCoder-Making-LLM-Generated-GUI-Code-Playable",
           "version": "FSE 2026 Research Papers; arXiv:2604.19742v1",
           "supports": [
-            "risk_004.what_can_go_wrong[0] â€” In the studied repository-aware GUI code-generation benchmark, generated candidates from 10 evaluated code LLMs achieved near-zero Play@3 despite high compilation rates; Play@k requires an application to complete task-oriented end-to-end GUI playthroughs without logical errors."
+            "risk_004.what_can_go_wrong[0] — In the studied repository-aware GUI code-generation benchmark, generated candidates from 10 evaluated code LLMs achieved near-zero Play@3 despite high compilation rates; Play@k requires an application to complete task-oriented end-to-end GUI playthroughs without logical errors."
           ],
           "limitations": "FSE 2026 benchmark evidence is limited to the studied repository-aware GUI applications, languages, models, and automated LLM-based PlayTester evaluation. It does not directly measure first-time human users, beginner personas, every core user flow, all UI platforms, or current/future models. Successful generated candidates existed, and the PlayCoder repair framework improved Play@3, so this supports a possibility-scoped behavioral-flow failure rather than universal failure."
         }
