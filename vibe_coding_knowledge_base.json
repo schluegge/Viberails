@@ -171,7 +171,7 @@
       ],
       "guardrails": [
         "Require structured prompts with objective, constraints, and acceptance tests.",
-        "Require the agent to restate the requested outcome before coding."
+        "Require the agent to ask clarifying questions before coding when requirements are ambiguous or underspecified."
       ],
       "evidence": [
         {
