@@ -127,7 +127,7 @@
       "id": "risk_003",
       "title": "Unsafe handling of secrets and personal data",
       "what_can_go_wrong": [
-        "API keys are hardcoded and leaked.",
+        "Generated code can contain hard-coded credentials.",
         "Personal data is logged or exposed.",
         "Unencrypted transport or storage is used."
       ],
