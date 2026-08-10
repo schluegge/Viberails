@@ -167,6 +167,18 @@
             "risk_003.what_can_go_wrong[1] — In the studied GitHub Copilot/Codex setup, generated outputs exposed sensitive personal information from training data."
           ],
           "limitations": "The study used carefully designed leakage-inducing prompt templates and a historical GitHub Copilot/Codex setup; approximately 8% (43) of the tested prompts yielded privacy leaks. It does not establish that ordinary prompts, other coding assistants, current Copilot models, all platforms, or logging behavior exhibit the same risk or prevalence."
+        },
+        {
+          "id": "evidence_risk_003_hardcoded_credentials_peng_2026",
+          "source_type": "research",
+          "title": "Cross-Cutting Security Analysis of LLM-Generated Code via Metamorphic Testing and Association Rule Mining",
+          "organization_or_author": "Zedong Peng, Chenggang Wang, Shangyue Zhu",
+          "url": "https://arxiv.org/abs/2607.12089",
+          "publication_or_revision_date": "2026-07-13",
+          "supports": [
+            "risk_003.what_can_go_wrong[0] — In the studied LLMSecEval benchmark, generated code from five open models violated the hard-coded-credentials metamorphic relation in 651 of 823 applicable snippets (79.1%)."
+          ],
+          "limitations": "Benchmark-derived result limited to 3,700 Python/C snippets generated from 148 LLMSecEval prompts by five studied open models and evaluated with an LLM-based judge (Claude Sonnet 4.6). It does not establish prevalence for other models, languages, platforms, ordinary production prompts, current systems, or that any hard-coded credential is a valid real-world secret or was leaked or exploited."
         }
       ]
     },
