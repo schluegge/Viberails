@@ -317,7 +317,7 @@
       "title": "No release quality gate",
       "what_can_go_wrong": [
         "AI-generated code can be shipped to production without line-by-line manual verification.",
-        "Breaking changes reach users without rollback.",
+        "AI-agent-generated Python maintenance PRs can introduce potential breaking changes.",
         "Missing telemetry can hinder incident diagnosis and troubleshooting."
       ],
       "likelihood": "medium",
@@ -354,6 +354,18 @@
             "risk_006.what_can_go_wrong[0] - In the 2026 Hanover Research survey commissioned by New Relic, 62% of surveyed technology leaders reported that their engineering teams often trusted AI-generated code enough to ship it to production without line-by-line manual verification."
           ],
           "limitations": "Vendor-commissioned self-report survey of 200 U.S.-based full-time technology decision-makers in IT/Engineering at upper-mid-market and enterprise companies using generative and agentic AI in software engineering. It does not establish that the shipped code was prototype code, that every deployment lacked other quality gates, or that the result generalizes to smaller organizations, other countries, all teams, or future practice."
+        },
+        {
+          "id": "evidence_risk_006_agentic_breaking_changes_msr_2026",
+          "source_type": "research",
+          "title": "Safer Builders, Risky Maintainers: A Comparative Study of Breaking Changes in Human vs Agentic PRs",
+          "organization_or_author": "K M Ferdous, Dipayan Banik, Kowshik Chowdhury, Shazibul Islam Shamim",
+          "url": "https://doi.org/10.1145/3793302.3793610",
+          "publication_or_revision_date": "2026-04-13",
+          "supports": [
+            "risk_006.what_can_go_wrong[1] — In the studied AIDev Python repositories, agent-generated PR patches contained statically detected potential breaking changes; maintenance-oriented refactor and chore patches had reported potential-breaking-change rates of 6.72% and 9.35%, respectively."
+          ],
+          "limitations": "Peer-reviewed MSR 2026 evidence is limited to Python repositories and the AIDev dataset, and measures potential breaking changes detected from reconstructed patches with an AST-based tool rather than confirmed downstream user breakage. The study found lower potential-breaking-change rates for agentic patches than human patches overall, so this supports only a possibility-scoped maintenance-PR claim. It does not establish that breaking changes reached users, that rollback was unavailable, or that the rates generalize to other languages, repositories, agents, or current systems."
         },
         {
           "id": "evidence_risk_006_opentelemetry_observability_primer",
