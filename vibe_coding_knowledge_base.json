@@ -337,7 +337,7 @@
         "Provide clear feedback for user actions, errors, and task completion.",
         "Provide clear step-by-step instructions for unfamiliar or error-prone workflows where needed.",
         "Require accessibility checks (contrast, focus, labels, navigation).",
-        "User-test with at least one true beginner persona before release."
+        "Conduct usability testing with representative actual or likely users, including novice users when they are part of the target audience, at appropriate stages throughout development."
       ],
       "evidence": [
         {
