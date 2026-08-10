@@ -95,7 +95,7 @@
       "title": "Prompt ambiguity",
       "what_can_go_wrong": [
         "Agent optimizes for wrong success criteria.",
-        "Critical constraints are ignored.",
+        "Generated code can fail to satisfy stated constraints.",
         "Features are implemented inconsistently across platforms."
       ],
       "likelihood": "high",
