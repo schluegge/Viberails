@@ -484,8 +484,7 @@
     "hobby_project": {
       "minimum_requirements": [
         "No hardcoded secrets",
-        "Basic functional test of core flow",
-        "Clear disclaimer that reliability is best effort"
+        "Basic functional test of core flow"
       ]
     },
     "personal_utility": {
