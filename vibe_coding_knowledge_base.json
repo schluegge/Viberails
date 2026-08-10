@@ -214,7 +214,7 @@
       "what_can_go_wrong": [
         "First-time users cannot complete core flows.",
         "Interfaces are not readable or understandable.",
-        "Keyboard/screen-reader support is missing."
+        "LLM-generated web code can omit alternative text needed by screen-reader users."
       ],
       "likelihood": "medium",
       "impact": "medium",
