@@ -81,7 +81,8 @@
           "impact",
           "applies_to_personas",
           "applies_to_platforms",
-          "guardrails"
+          "guardrails",
+          "evidence"
         ],
         "properties": {
           "id": {
