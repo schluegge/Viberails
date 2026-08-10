@@ -332,7 +332,9 @@
         "voice_assistant"
       ],
       "guardrails": [
-        "Require simple language, clear feedback, and guided onboarding.",
+        "Use clear, easy-to-understand language in user-facing content.",
+        "Provide clear feedback for user actions, errors, and task completion.",
+        "Provide clear step-by-step instructions for unfamiliar or error-prone workflows where needed.",
         "Require accessibility checks (contrast, focus, labels, navigation).",
         "User-test with at least one true beginner persona before release."
       ],
