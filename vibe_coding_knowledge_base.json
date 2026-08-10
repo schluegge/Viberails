@@ -250,7 +250,7 @@
       "title": "Inaccessible or unusable UX",
       "what_can_go_wrong": [
         "LLM-generated GUI applications can fail end-to-end interaction flows because of behavioral logic defects.",
-        "Interfaces are not readable or understandable.",
+        "LLM-generated GUI mockups can use smaller text and abbreviated labels that reduce readability and introduce label ambiguity.",
         "LLM-generated web code can omit alternative text needed by screen-reader users."
       ],
       "likelihood": "medium",
@@ -296,6 +296,19 @@
             "risk_004.what_can_go_wrong[0] — In the studied repository-aware GUI code-generation benchmark, generated candidates from 10 evaluated code LLMs achieved near-zero Play@3 despite high compilation rates; Play@k requires an application to complete task-oriented end-to-end GUI playthroughs without logical errors."
           ],
           "limitations": "FSE 2026 benchmark evidence is limited to the studied repository-aware GUI applications, languages, models, and automated LLM-based PlayTester evaluation. It does not directly measure first-time human users, beginner personas, every core user flow, all UI platforms, or current/future models. Successful generated candidates existed, and the PlayCoder repair framework improved Play@3, so this supports a possibility-scoped behavioral-flow failure rather than universal failure."
+        },
+        {
+          "id": "evidence_risk_004_llm_gui_readability_2026",
+          "source_type": "research",
+          "title": "Qualitative Evaluation of LLM-Designed GUI",
+          "organization_or_author": "Bartosz Sawicki, Tomasz Leś, Dariusz Parzych, Aleksandra Wycisk-Ficek, Paweł Trębacz, Paweł Zawadzki",
+          "url": "https://arxiv.org/abs/2601.22759",
+          "publication_or_revision_date": "2026-01-30",
+          "version": "arXiv:2601.22759v1",
+          "supports": [
+            "risk_004.what_can_go_wrong[1] — In the studied persona-adaptation experiment, an LLM-generated student-oriented GUI used smaller text and abbreviated labels; the authors report reduced readability and label ambiguity for that design."
+          ],
+          "limitations": "Preprint evidence limited to 27 interactive GUI mock-ups generated with three studied models and evaluated by experts, plus a small persona-adaptation experiment. It does not establish universal unreadability, prevalence across generated interfaces, actual end-user comprehension failure, production-system behavior, every UI platform, or current/future model behavior; the same study also produced a senior-oriented variant with larger text and explicit labels."
         }
       ]
     },
