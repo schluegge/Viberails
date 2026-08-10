@@ -3,77 +3,28 @@
   "version": "1.0.0",
   "scope": {
     "personas": [
-      {
-        "id": "persona_beginner_senior",
-        "description": "Older first-time computer users (for example, a 76-year-old grandma).",
-        "experience_level": "none"
-      },
-      {
-        "id": "persona_beginner_kid",
-        "description": "Kids building for fun.",
-        "experience_level": "none"
-      },
-      {
-        "id": "persona_hobbyist",
-        "description": "Self-directed hobby builders.",
-        "experience_level": "low_to_medium"
-      },
-      {
-        "id": "persona_advanced_builder",
-        "description": "Builders targeting state-of-the-art products.",
-        "experience_level": "medium_to_high"
-      }
+      {"id": "persona_beginner_senior", "description": "Older first-time computer users (for example, a 76-year-old grandma).", "experience_level": "none"},
+      {"id": "persona_beginner_kid", "description": "Kids building for fun.", "experience_level": "none"},
+      {"id": "persona_hobbyist", "description": "Self-directed hobby builders.", "experience_level": "low_to_medium"},
+      {"id": "persona_advanced_builder", "description": "Builders targeting state-of-the-art products.", "experience_level": "medium_to_high"}
     ],
-    "goals": [
-      "hobby_project",
-      "personal_utility",
-      "state_of_the_art_product"
-    ],
-    "platforms": [
-      "web",
-      "mobile_ios",
-      "mobile_android",
-      "desktop",
-      "backend_api",
-      "embedded_iot",
-      "game_console",
-      "wearable",
-      "voice_assistant"
-    ]
+    "goals": ["hobby_project", "personal_utility", "state_of_the_art_product"],
+    "platforms": ["web", "mobile_ios", "mobile_android", "desktop", "backend_api", "embedded_iot", "game_console", "wearable", "voice_assistant"]
   },
   "risk_catalog": [
     {
       "id": "risk_001",
       "title": "Unverified generated code",
       "what_can_go_wrong": [
-        "Code compiles but does the wrong thing.",
-        "Silent data corruption.",
-        "Security vulnerabilities are introduced."
+        {"id": "risk_001_claim_001", "statement": "Code compiles but does the wrong thing."},
+        {"id": "risk_001_claim_002", "statement": "Silent data corruption."},
+        {"id": "risk_001_claim_003", "statement": "Security vulnerabilities are introduced."}
       ],
       "likelihood": "high",
       "impact": "high",
-      "applies_to_personas": [
-        "persona_beginner_senior",
-        "persona_beginner_kid",
-        "persona_hobbyist",
-        "persona_advanced_builder"
-      ],
-      "applies_to_platforms": [
-        "web",
-        "mobile_ios",
-        "mobile_android",
-        "desktop",
-        "backend_api",
-        "embedded_iot",
-        "game_console",
-        "wearable",
-        "voice_assistant"
-      ],
-      "guardrails": [
-        "Require executable tests for generated logic before release.",
-        "Require static analysis and dependency vulnerability checks.",
-        "Require human review for auth, payments, data, and networking code."
-      ],
+      "applies_to_personas": ["persona_beginner_senior", "persona_beginner_kid", "persona_hobbyist", "persona_advanced_builder"],
+      "applies_to_platforms": ["web", "mobile_ios", "mobile_android", "desktop", "backend_api", "embedded_iot", "game_console", "wearable", "voice_assistant"],
+      "guardrails": ["Require executable tests for generated logic before release.", "Require static analysis and dependency vulnerability checks.", "Require human review for auth, payments, data, and networking code."],
       "evidence": [
         {
           "id": "evidence_risk_001_copilot_security_replication_2023",
@@ -83,9 +34,7 @@
           "url": "https://arxiv.org/abs/2311.11177",
           "publication_or_revision_date": "2023-11-18",
           "version": "Copilot 1.77.9225; CodeQL 2.12.4",
-          "supports": [
-            "risk_001.what_can_go_wrong[2] — In the studied GitHub Copilot/Python scenarios, generated suggestions contained security vulnerabilities."
-          ],
+          "supports_claim_ids": ["risk_001_claim_003"],
           "limitations": "Targeted replication limited to Python, 29 scenarios across 12 CWE categories, and the studied Copilot/CodeQL versions; it does not establish vulnerability prevalence for other languages, tools, platforms, or current model versions."
         }
       ]
@@ -94,34 +43,15 @@
       "id": "risk_002",
       "title": "Prompt ambiguity",
       "what_can_go_wrong": [
-        "Ambiguous requirements can lead to functionally divergent generated implementations.",
-        "Generated code can fail to satisfy stated constraints.",
-        "Generated-code models can fail to identify or resolve ambiguous requirements autonomously."
+        {"id": "risk_002_claim_001", "statement": "Ambiguous requirements can lead to functionally divergent generated implementations."},
+        {"id": "risk_002_claim_002", "statement": "Generated code can fail to satisfy stated constraints."},
+        {"id": "risk_002_claim_003", "statement": "Generated-code models can fail to identify or resolve ambiguous requirements autonomously."}
       ],
       "likelihood": "high",
       "impact": "medium",
-      "applies_to_personas": [
-        "persona_beginner_senior",
-        "persona_beginner_kid",
-        "persona_hobbyist",
-        "persona_advanced_builder"
-      ],
-      "applies_to_platforms": [
-        "web",
-        "mobile_ios",
-        "mobile_android",
-        "desktop",
-        "backend_api",
-        "embedded_iot",
-        "game_console",
-        "wearable",
-        "voice_assistant"
-      ],
-      "guardrails": [
-        "Require structured prompts with objective, constraints, and acceptance tests.",
-        "Require the agent to restate the requested outcome before coding.",
-        "Require explicit non-goals to avoid scope drift."
-      ],
+      "applies_to_personas": ["persona_beginner_senior", "persona_beginner_kid", "persona_hobbyist", "persona_advanced_builder"],
+      "applies_to_platforms": ["web", "mobile_ios", "mobile_android", "desktop", "backend_api", "embedded_iot", "game_console", "wearable", "voice_assistant"],
+      "guardrails": ["Require structured prompts with objective, constraints, and acceptance tests.", "Require the agent to restate the requested outcome before coding.", "Require explicit non-goals to avoid scope drift."],
       "evidence": [
         {
           "id": "evidence_risk_002_intentcoding_constraints_2026",
@@ -129,9 +59,7 @@
           "title": "IntentCoding: Amplifying User Intent in Code Generation",
           "organization_or_author": "Zheng Fang, Yihong Dong, Lili Mou, Dongming Jin, Zhi Jin, Ge Li",
           "url": "https://aclanthology.org/2026.findings-acl.1662/",
-          "supports": [
-            "risk_002.what_can_go_wrong[1] — In the studied code-generation benchmarks, standard decoding showed degraded adherence as the number of explicit user-intent constraints increased, demonstrating that generated code can fail to satisfy stated constraints."
-          ],
+          "supports_claim_ids": ["risk_002_claim_002"],
           "limitations": "Peer-reviewed ACL 2026 benchmark evidence supports constraint-following failures under the studied code-generation setups, not universal failure across all models, prompts, languages, platforms, or constraint types. The inspected publication metadata/abstract does not justify labeling every omitted constraint as critical or claiming that a model wholly ignored it."
         },
         {
@@ -141,10 +69,7 @@
           "organization_or_author": "Di Yang, Xinou Xie, Xiuwen Yang, Ming Hu, Yihao Huang, Yueling Zhang, Weikai Miao, Ting Su, Chengcheng Wan, Geguang Pu",
           "url": "https://arxiv.org/abs/2604.21505",
           "publication_or_revision_date": "2026-04-23",
-          "supports": [
-            "risk_002.what_can_go_wrong[0] — In the studied Orchid benchmark, evaluated LLMs frequently produced functionally divergent implementations for the same ambiguous requirement.",
-            "risk_002.what_can_go_wrong[2] — In the studied Orchid benchmark, evaluated LLMs could fail to identify or resolve ambiguity autonomously."
-          ],
+          "supports_claim_ids": ["risk_002_claim_001", "risk_002_claim_003"],
           "limitations": "Evidence is limited to the studied function-level benchmark and evaluated models; Orchid uses ambiguity variants across lexical, syntactic, semantic, and vagueness categories, and not every ambiguity necessarily changes generated behavior. It does not establish universal failure across languages, platforms, models, interactive clarification workflows, or real-world projects."
         }
       ]
@@ -153,34 +78,15 @@
       "id": "risk_003",
       "title": "Unsafe handling of secrets and personal data",
       "what_can_go_wrong": [
-        "Generated code can contain hard-coded credentials.",
-        "Personal data is logged or exposed.",
-        "Unencrypted transport or storage is used."
+        {"id": "risk_003_claim_001", "statement": "Generated code can contain hard-coded credentials."},
+        {"id": "risk_003_claim_002", "statement": "Personal data is logged or exposed."},
+        {"id": "risk_003_claim_003", "statement": "Unencrypted transport or storage is used."}
       ],
       "likelihood": "medium",
       "impact": "high",
-      "applies_to_personas": [
-        "persona_beginner_senior",
-        "persona_beginner_kid",
-        "persona_hobbyist",
-        "persona_advanced_builder"
-      ],
-      "applies_to_platforms": [
-        "web",
-        "mobile_ios",
-        "mobile_android",
-        "desktop",
-        "backend_api",
-        "embedded_iot",
-        "game_console",
-        "wearable",
-        "voice_assistant"
-      ],
-      "guardrails": [
-        "Never commit secrets; use secure secret stores.",
-        "Minimize collected data and redact logs by default.",
-        "Enforce encryption in transit and at rest where applicable."
-      ],
+      "applies_to_personas": ["persona_beginner_senior", "persona_beginner_kid", "persona_hobbyist", "persona_advanced_builder"],
+      "applies_to_platforms": ["web", "mobile_ios", "mobile_android", "desktop", "backend_api", "embedded_iot", "game_console", "wearable", "voice_assistant"],
+      "guardrails": ["Never commit secrets; use secure secret stores.", "Minimize collected data and redact logs by default.", "Enforce encryption in transit and at rest where applicable."],
       "evidence": [
         {
           "id": "evidence_risk_003_codexleaks_privacy_2023",
@@ -189,9 +95,7 @@
           "organization_or_author": "Liang Niu, Shujaat Mirza, Zayd Maradni, Christina Pöpper",
           "url": "https://www.usenix.org/conference/usenixsecurity23/presentation/niu",
           "version": "GitHub Copilot using the studied Codex model",
-          "supports": [
-            "risk_003.what_can_go_wrong[1] — In the studied GitHub Copilot/Codex setup, generated outputs exposed sensitive personal information from training data."
-          ],
+          "supports_claim_ids": ["risk_003_claim_002"],
           "limitations": "The study used carefully designed leakage-inducing prompt templates and a historical GitHub Copilot/Codex setup; approximately 8% (43) of the tested prompts yielded privacy leaks. It does not establish that ordinary prompts, other coding assistants, current Copilot models, all platforms, or logging behavior exhibit the same risk or prevalence."
         },
         {
@@ -201,9 +105,7 @@
           "organization_or_author": "Zedong Peng, Chenggang Wang, Shangyue Zhu",
           "url": "https://arxiv.org/abs/2607.12089",
           "publication_or_revision_date": "2026-07-13",
-          "supports": [
-            "risk_003.what_can_go_wrong[0] — In the studied LLMSecEval benchmark, generated code from five open models violated the hard-coded-credentials metamorphic relation in 651 of 823 applicable snippets (79.1%)."
-          ],
+          "supports_claim_ids": ["risk_003_claim_001"],
           "limitations": "Benchmark-derived result limited to 3,700 Python/C snippets generated from 148 LLMSecEval prompts by five studied open models and evaluated with an LLM-based judge (Claude Sonnet 4.6). It does not establish prevalence for other models, languages, platforms, ordinary production prompts, current systems, or that any hard-coded credential is a valid real-world secret or was leaked or exploited."
         }
       ]
@@ -212,29 +114,15 @@
       "id": "risk_004",
       "title": "Inaccessible or unusable UX",
       "what_can_go_wrong": [
-        "First-time users cannot complete core flows.",
-        "Interfaces are not readable or understandable.",
-        "LLM-generated web code can omit alternative text needed by screen-reader users."
+        {"id": "risk_004_claim_001", "statement": "First-time users cannot complete core flows."},
+        {"id": "risk_004_claim_002", "statement": "Interfaces are not readable or understandable."},
+        {"id": "risk_004_claim_003", "statement": "LLM-generated web code can omit alternative text needed by screen-reader users."}
       ],
       "likelihood": "medium",
       "impact": "medium",
-      "applies_to_personas": [
-        "persona_beginner_senior",
-        "persona_beginner_kid"
-      ],
-      "applies_to_platforms": [
-        "web",
-        "mobile_ios",
-        "mobile_android",
-        "desktop",
-        "wearable",
-        "voice_assistant"
-      ],
-      "guardrails": [
-        "Require simple language, clear feedback, and guided onboarding.",
-        "Require accessibility checks (contrast, focus, labels, navigation).",
-        "User-test with at least one true beginner persona before release."
-      ],
+      "applies_to_personas": ["persona_beginner_senior", "persona_beginner_kid"],
+      "applies_to_platforms": ["web", "mobile_ios", "mobile_android", "desktop", "wearable", "voice_assistant"],
+      "guardrails": ["Require simple language, clear feedback, and guided onboarding.", "Require accessibility checks (contrast, focus, labels, navigation).", "User-test with at least one true beginner persona before release."],
       "evidence": [
         {
           "id": "evidence_risk_004_chatgpt_web_accessibility_2024",
@@ -243,9 +131,7 @@
           "organization_or_author": "Wajdi Aljedaani, Abdulrahman Habib, Ahmed Aljohani, Marcelo Eler, Yunhe Feng",
           "url": "https://doi.org/10.1145/3677846.3677854",
           "publication_or_revision_date": "2024-05-13",
-          "supports": [
-            "risk_004.what_can_go_wrong[2] — In a study where 88 web developers prompted ChatGPT to generate websites, 74 of 88 generated websites had detected accessibility issues; the reported violations included missing image alt attributes, which the authors identify as important for screen-reader users."
-          ],
+          "supports_claim_ids": ["risk_004_claim_003"],
           "limitations": "Peer-reviewed W4A 2024 evidence is limited to ChatGPT-generated web code in the studied prompting setup and automated accessibility checks. It does not establish that every generated website lacks accessibility support, that keyboard support is generally missing, or that the result generalizes to current models, non-web platforms, or all accessibility requirements; 14 of 88 studied websites had no detected accessibility issues."
         }
       ]
@@ -254,32 +140,15 @@
       "id": "risk_006",
       "title": "No release quality gate",
       "what_can_go_wrong": [
-        "Prototype code is shipped as production code.",
-        "Breaking changes reach users without rollback.",
-        "Missing telemetry can hinder incident diagnosis and troubleshooting."
+        {"id": "risk_006_claim_001", "statement": "Prototype code is shipped as production code."},
+        {"id": "risk_006_claim_002", "statement": "Breaking changes reach users without rollback."},
+        {"id": "risk_006_claim_003", "statement": "Missing telemetry can hinder incident diagnosis and troubleshooting."}
       ],
       "likelihood": "medium",
       "impact": "high",
-      "applies_to_personas": [
-        "persona_hobbyist",
-        "persona_advanced_builder"
-      ],
-      "applies_to_platforms": [
-        "web",
-        "mobile_ios",
-        "mobile_android",
-        "desktop",
-        "backend_api",
-        "embedded_iot",
-        "game_console",
-        "wearable",
-        "voice_assistant"
-      ],
-      "guardrails": [
-        "Define required checks for each goal type (hobby vs state-of-the-art).",
-        "Require staged release with rollback strategy.",
-        "Require baseline logging, monitoring, and error reporting."
-      ],
+      "applies_to_personas": ["persona_hobbyist", "persona_advanced_builder"],
+      "applies_to_platforms": ["web", "mobile_ios", "mobile_android", "desktop", "backend_api", "embedded_iot", "game_console", "wearable", "voice_assistant"],
+      "guardrails": ["Define required checks for each goal type (hobby vs state-of-the-art).", "Require staged release with rollback strategy.", "Require baseline logging, monitoring, and error reporting."],
       "evidence": [
         {
           "id": "evidence_risk_006_opentelemetry_observability_primer",
@@ -287,37 +156,15 @@
           "title": "Observability primer",
           "organization_or_author": "OpenTelemetry",
           "url": "https://opentelemetry.io/docs/concepts/observability-primer/",
-          "supports": [
-            "risk_006.what_can_go_wrong[2] — OpenTelemetry states that observability enables troubleshooting and answering why system behavior occurs, and that applications must emit telemetry signals such as traces, metrics, and logs to support those questions; missing telemetry can therefore hinder diagnosis and troubleshooting."
-          ],
+          "supports_claim_ids": ["risk_006_claim_003"],
           "limitations": "Official conceptual documentation, not an empirical study of AI-generated software or a proof that incidents become impossible to diagnose. Other evidence sources can sometimes permit diagnosis even when application telemetry is incomplete; this supports `can hinder`, not the former absolute `cannot be diagnosed` wording."
         }
       ]
     }
   ],
   "goal_quality_gates": {
-    "hobby_project": {
-      "minimum_requirements": [
-        "No hardcoded secrets",
-        "Basic functional test of core flow",
-        "Clear disclaimer that reliability is best effort"
-      ]
-    },
-    "personal_utility": {
-      "minimum_requirements": [
-        "Automated tests for critical paths",
-        "Backup and recovery plan for user data",
-        "Authentication for private data"
-      ]
-    },
-    "state_of_the_art_product": {
-      "minimum_requirements": [
-        "Threat model and security review",
-        "Comprehensive CI with tests and static analysis",
-        "Performance and accessibility budgets",
-        "Observability and incident response runbook",
-        "Cross-platform compatibility matrix"
-      ]
-    }
+    "hobby_project": {"minimum_requirements": ["No hardcoded secrets", "Basic functional test of core flow", "Clear disclaimer that reliability is best effort"]},
+    "personal_utility": {"minimum_requirements": ["Automated tests for critical paths", "Backup and recovery plan for user data", "Authentication for private data"]},
+    "state_of_the_art_product": {"minimum_requirements": ["Threat model and security review", "Comprehensive CI with tests and static analysis", "Performance and accessibility budgets", "Observability and incident response runbook", "Cross-platform compatibility matrix"]}
   }
 }
