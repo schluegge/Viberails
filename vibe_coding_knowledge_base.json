@@ -246,7 +246,7 @@
         "voice_assistant"
       ],
       "guardrails": [
-        "Never commit secrets; use secure secret stores.",
+        "Do not commit secrets to source control.",
         "Minimize collected data and redact logs by default.",
         "Enforce encryption in transit and at rest where applicable."
       ],
