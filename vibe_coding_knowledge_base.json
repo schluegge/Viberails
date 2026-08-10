@@ -296,6 +296,19 @@
         "Define required checks for each goal type (hobby vs state-of-the-art).",
         "Require staged release with rollback strategy.",
         "Require baseline logging, monitoring, and error reporting."
+      ],
+      "evidence": [
+        {
+          "id": "evidence_risk_006_opentelemetry_observability_primer",
+          "source_type": "official_documentation",
+          "title": "Observability primer",
+          "organization_or_author": "OpenTelemetry",
+          "url": "https://opentelemetry.io/docs/concepts/observability-primer/",
+          "supports": [
+            "risk_006.what_can_go_wrong[2] — OpenTelemetry states that observability enables troubleshooting and answering why system behavior occurs, and that applications must emit telemetry signals such as traces, metrics, and logs to support those questions; missing telemetry can therefore hinder diagnosis and troubleshooting."
+          ],
+          "limitations": "Official conceptual documentation, not an empirical study of AI-generated software or a proof that incidents become impossible to diagnose. Other evidence sources can sometimes permit diagnosis even when application telemetry is incomplete; this supports `can hinder`, not the former absolute `cannot be diagnosed` wording."
+        }
       ]
     }
   ],
