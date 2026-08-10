@@ -254,7 +254,6 @@
       "id": "risk_005",
       "title": "Platform mismatch",
       "what_can_go_wrong": [
-        "Performance is unacceptable on low-end hardware.",
         "Offline/online assumptions break real usage."
       ],
       "likelihood": "medium",
