@@ -154,6 +154,21 @@
         "Never commit secrets; use secure secret stores.",
         "Minimize collected data and redact logs by default.",
         "Enforce encryption in transit and at rest where applicable."
+      ],
+      "evidence": [
+        {
+          "id": "evidence_risk_003_codexleaks_privacy_2023",
+          "source_type": "research",
+          "title": "CodexLeaks: Privacy Leaks from Code Generation Language Models in GitHub Copilot",
+          "organization_or_author": "Liang Niu, Shujaat Mirza, Zayd Maradni, Christina Pöpper",
+          "url": "https://www.usenix.org/conference/usenixsecurity23/presentation/niu",
+          "publication_or_revision_date": "2023-08-01",
+          "version": "GitHub Copilot using the studied Codex model",
+          "supports": [
+            "risk_003.what_can_go_wrong[1] — In the studied GitHub Copilot/Codex setup, generated outputs exposed sensitive personal information from training data."
+          ],
+          "limitations": "The study used carefully designed leakage-inducing prompt templates and a historical GitHub Copilot/Codex setup; approximately 8% (43) of the tested prompts yielded privacy leaks. It does not establish that ordinary prompts, other coding assistants, current Copilot models, all platforms, or logging behavior exhibit the same risk or prevalence."
+        }
       ]
     },
     {
