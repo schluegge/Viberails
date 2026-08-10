@@ -426,7 +426,8 @@
         "Define required checks for each goal type (hobby vs state-of-the-art).",
         "Use a staged or progressive rollout when the deployment platform supports incremental exposure and the release risk warrants it.",
         "Maintain a documented recovery plan for unsuccessful releases, using rollback to a known good state when rollback is safe and supported, or a tested fix-forward path when it is not.",
-        "Require baseline logging, monitoring, and error reporting."
+        "Instrument released software to emit the telemetry needed to diagnose operational failures, selecting logs, metrics, traces, or error events according to the system architecture and failure modes.",
+        "Monitor operational health using relevant telemetry signals, and configure actionable notifications for conditions that require intervention."
       ],
       "evidence": [
         {
