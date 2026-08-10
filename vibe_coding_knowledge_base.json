@@ -73,6 +73,21 @@
         "Require executable tests for generated logic before release.",
         "Require static analysis and dependency vulnerability checks.",
         "Require human review for auth, payments, data, and networking code."
+      ],
+      "evidence": [
+        {
+          "id": "evidence_risk_001_copilot_security_replication_2023",
+          "source_type": "research",
+          "title": "Assessing the Security of GitHub Copilot Generated Code -- A Targeted Replication Study",
+          "organization_or_author": "Vahid Majdinasab, Michael Joshua Bishop, Shawn Rasheed, Arghavan Moradidakhel, Amjed Tahir, Foutse Khomh",
+          "url": "https://arxiv.org/abs/2311.11177",
+          "publication_or_revision_date": "2023-11-18",
+          "version": "Copilot 1.77.9225; CodeQL 2.12.4",
+          "supports": [
+            "risk_001.what_can_go_wrong[2] — In the studied GitHub Copilot/Python scenarios, generated suggestions contained security vulnerabilities."
+          ],
+          "limitations": "Targeted replication limited to Python, 29 scenarios across 12 CWE categories, and the studied Copilot/CodeQL versions; it does not establish vulnerability prevalence for other languages, tools, platforms, or current model versions."
+        }
       ]
     },
     {
