@@ -498,7 +498,7 @@
       "minimum_requirements": [
         "Perform threat modeling early enough to inform security design, and revisit it when material changes to architecture, data flows, trust boundaries, or threat assumptions can change the threat analysis.",
         "Perform risk-based security verification using applicable review, analysis, and testing techniques before release.",
-        "Comprehensive CI with tests and static analysis",
+        "Use continuous integration to automatically run the project's required test suite and applicable static analysis on code changes.",
         "Performance and accessibility budgets",
         "Observability and incident response runbook",
         "Define the supported platforms and environments, and verify compatibility across the combinations the product claims to support."
