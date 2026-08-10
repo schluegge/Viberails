@@ -47,7 +47,7 @@
       "title": "Unverified generated code",
       "what_can_go_wrong": [
         "Generated code can pass an initial test suite yet still be functionally incorrect.",
-        "Silent data corruption.",
+        "In long verbatim data-transcription tasks, LLM-generated Python code can silently fail to preserve embedded data exactly.",
         "Security vulnerabilities are introduced."
       ],
       "likelihood": "high",
@@ -99,6 +99,19 @@
             "risk_001.what_can_go_wrong[0] — In HumanEval+, additional tests exposed previously undetected wrong LLM-generated code that had passed the original HumanEval tests, demonstrating that generated code can pass an initial test suite yet still be functionally incorrect."
           ],
           "limitations": "Benchmark evidence from Python function synthesis and the studied 2023 model set and test suites; it demonstrates that insufficient tests can miss functional defects, not that all generated code is wrong, that compilation success implies correctness, or that the result generalizes unchanged to every language, platform, model, project, or test strategy."
+        },
+        {
+          "id": "evidence_risk_001_verbatim_transcription_2026",
+          "source_type": "research",
+          "title": "Verbatim Data Transcription Failures in LLM Code Generation: A State-Tracking Stress Test",
+          "organization_or_author": "Mohd Ariful Haque, Kishor Datta Gupta, Mohammad Ashiqur Rahman, Roy George",
+          "url": "https://arxiv.org/abs/2601.03640",
+          "publication_or_revision_date": "2026-01-07",
+          "version": "arXiv:2601.03640v1",
+          "supports": [
+            "risk_001.what_can_go_wrong[1] — In the studied long verbatim high-precision-number transcription tasks, LLM-generated Python code could silently fail to preserve the supplied embedded data exactly."
+          ],
+          "limitations": "Preprint benchmark limited to Python code generation requiring verbatim transcription of 100, 300, or 500 high-precision decimal values across 11 studied model serving tags. Evaluation uses exact-string inclusion, so numerically equivalent reformatting counts as failure. It does not establish general database, storage, hardware, or arbitrary application-data corruption, universal prevalence, or unchanged behavior for other languages, models, task types, or current systems."
         }
       ]
     },
