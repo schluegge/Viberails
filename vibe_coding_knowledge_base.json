@@ -170,7 +170,7 @@
         "voice_assistant"
       ],
       "guardrails": [
-        "Require structured prompts with objective, constraints, and acceptance tests.",
+        "Provide concrete task requirements and relevant constraints before code generation, including I/O specifications and edge-case requirements where applicable.",
         "Require the agent to ask clarifying questions before coding when requirements are ambiguous or underspecified."
       ],
       "evidence": [
