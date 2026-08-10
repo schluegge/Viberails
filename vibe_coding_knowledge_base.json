@@ -3,77 +3,28 @@
   "version": "1.0.0",
   "scope": {
     "personas": [
-      {
-        "id": "persona_beginner_senior",
-        "description": "Older first-time computer users (for example, a 76-year-old grandma).",
-        "experience_level": "none"
-      },
-      {
-        "id": "persona_beginner_kid",
-        "description": "Kids building for fun.",
-        "experience_level": "none"
-      },
-      {
-        "id": "persona_hobbyist",
-        "description": "Self-directed hobby builders.",
-        "experience_level": "low_to_medium"
-      },
-      {
-        "id": "persona_advanced_builder",
-        "description": "Builders targeting state-of-the-art products.",
-        "experience_level": "medium_to_high"
-      }
+      {"id": "persona_beginner_senior", "description": "Older first-time computer users (for example, a 76-year-old grandma).", "experience_level": "none"},
+      {"id": "persona_beginner_kid", "description": "Kids building for fun.", "experience_level": "none"},
+      {"id": "persona_hobbyist", "description": "Self-directed hobby builders.", "experience_level": "low_to_medium"},
+      {"id": "persona_advanced_builder", "description": "Builders targeting state-of-the-art products.", "experience_level": "medium_to_high"}
     ],
-    "goals": [
-      "hobby_project",
-      "personal_utility",
-      "state_of_the_art_product"
-    ],
-    "platforms": [
-      "web",
-      "mobile_ios",
-      "mobile_android",
-      "desktop",
-      "backend_api",
-      "embedded_iot",
-      "game_console",
-      "wearable",
-      "voice_assistant"
-    ]
+    "goals": ["hobby_project", "personal_utility", "state_of_the_art_product"],
+    "platforms": ["web", "mobile_ios", "mobile_android", "desktop", "backend_api", "embedded_iot", "game_console", "wearable", "voice_assistant"]
   },
   "risk_catalog": [
     {
       "id": "risk_001",
       "title": "Unverified generated code",
       "what_can_go_wrong": [
-        "Generated code can pass an initial test suite yet still be functionally incorrect.",
-        "In long verbatim data-transcription tasks, LLM-generated Python code can silently fail to preserve embedded data exactly.",
-        "Security vulnerabilities are introduced."
+        {"id": "risk_001_claim_001", "statement": "Generated code can pass an initial test suite yet still be functionally incorrect."},
+        {"id": "risk_001_claim_002", "statement": "In long verbatim data-transcription tasks, LLM-generated Python code can silently fail to preserve embedded data exactly."},
+        {"id": "risk_001_claim_003", "statement": "Security vulnerabilities are introduced."}
       ],
       "likelihood": "high",
       "impact": "high",
-      "applies_to_personas": [
-        "persona_beginner_senior",
-        "persona_beginner_kid",
-        "persona_hobbyist",
-        "persona_advanced_builder"
-      ],
-      "applies_to_platforms": [
-        "web",
-        "mobile_ios",
-        "mobile_android",
-        "desktop",
-        "backend_api",
-        "embedded_iot",
-        "game_console",
-        "wearable",
-        "voice_assistant"
-      ],
-      "guardrails": [
-        "Require executable tests for generated logic before release.",
-        "Require static analysis and dependency vulnerability checks.",
-        "Require human review for auth, payments, data, and networking code."
-      ],
+      "applies_to_personas": ["persona_beginner_senior", "persona_beginner_kid", "persona_hobbyist", "persona_advanced_builder"],
+      "applies_to_platforms": ["web", "mobile_ios", "mobile_android", "desktop", "backend_api", "embedded_iot", "game_console", "wearable", "voice_assistant"],
+      "guardrails": ["Require executable tests for generated logic before release.", "Require static analysis and dependency vulnerability checks.", "Require human review for auth, payments, data, and networking code."],
       "evidence": [
         {
           "id": "evidence_risk_001_copilot_security_replication_2023",
@@ -83,9 +34,7 @@
           "url": "https://arxiv.org/abs/2311.11177",
           "publication_or_revision_date": "2023-11-18",
           "version": "Copilot 1.77.9225; CodeQL 2.12.4",
-          "supports": [
-            "risk_001.what_can_go_wrong[2] — In the studied GitHub Copilot/Python scenarios, generated suggestions contained security vulnerabilities."
-          ],
+          "supports_claims": [{"claim_id": "risk_001_claim_003", "basis": "In the studied GitHub Copilot/Python scenarios, generated suggestions contained security vulnerabilities."}],
           "limitations": "Targeted replication limited to Python, 29 scenarios across 12 CWE categories, and the studied Copilot/CodeQL versions; it does not establish vulnerability prevalence for other languages, tools, platforms, or current model versions."
         },
         {
@@ -95,9 +44,7 @@
           "organization_or_author": "Jiawei Liu, Chunqiu Steven Xia, Yuyao Wang, Lingming Zhang",
           "url": "https://arxiv.org/abs/2305.01210",
           "publication_or_revision_date": "2023-05-02",
-          "supports": [
-            "risk_001.what_can_go_wrong[0] — In HumanEval+, additional tests exposed previously undetected wrong LLM-generated code that had passed the original HumanEval tests, demonstrating that generated code can pass an initial test suite yet still be functionally incorrect."
-          ],
+          "supports_claims": [{"claim_id": "risk_001_claim_001", "basis": "In HumanEval+, additional tests exposed previously undetected wrong LLM-generated code that had passed the original HumanEval tests, demonstrating that generated code can pass an initial test suite yet still be functionally incorrect."}],
           "limitations": "Benchmark evidence from Python function synthesis and the studied 2023 model set and test suites; it demonstrates that insufficient tests can miss functional defects, not that all generated code is wrong, that compilation success implies correctness, or that the result generalizes unchanged to every language, platform, model, project, or test strategy."
         },
         {
@@ -108,9 +55,7 @@
           "url": "https://arxiv.org/abs/2601.03640",
           "publication_or_revision_date": "2026-01-07",
           "version": "arXiv:2601.03640v1",
-          "supports": [
-            "risk_001.what_can_go_wrong[1] — In the studied long verbatim high-precision-number transcription tasks, LLM-generated Python code could silently fail to preserve the supplied embedded data exactly."
-          ],
+          "supports_claims": [{"claim_id": "risk_001_claim_002", "basis": "In the studied long verbatim high-precision-number transcription tasks, LLM-generated Python code could silently fail to preserve the supplied embedded data exactly."}],
           "limitations": "Preprint benchmark limited to Python code generation requiring verbatim transcription of 100, 300, or 500 high-precision decimal values across 11 studied model serving tags. Evaluation uses exact-string inclusion, so numerically equivalent reformatting counts as failure. It does not establish general database, storage, hardware, or arbitrary application-data corruption, universal prevalence, or unchanged behavior for other languages, models, task types, or current systems."
         }
       ]
@@ -119,34 +64,15 @@
       "id": "risk_002",
       "title": "Prompt ambiguity",
       "what_can_go_wrong": [
-        "Ambiguous requirements can lead to functionally divergent generated implementations.",
-        "Generated code can fail to satisfy stated constraints.",
-        "Generated-code models can fail to identify or resolve ambiguous requirements autonomously."
+        {"id": "risk_002_claim_001", "statement": "Ambiguous requirements can lead to functionally divergent generated implementations."},
+        {"id": "risk_002_claim_002", "statement": "Generated code can fail to satisfy stated constraints."},
+        {"id": "risk_002_claim_003", "statement": "Generated-code models can fail to identify or resolve ambiguous requirements autonomously."}
       ],
       "likelihood": "high",
       "impact": "medium",
-      "applies_to_personas": [
-        "persona_beginner_senior",
-        "persona_beginner_kid",
-        "persona_hobbyist",
-        "persona_advanced_builder"
-      ],
-      "applies_to_platforms": [
-        "web",
-        "mobile_ios",
-        "mobile_android",
-        "desktop",
-        "backend_api",
-        "embedded_iot",
-        "game_console",
-        "wearable",
-        "voice_assistant"
-      ],
-      "guardrails": [
-        "Require structured prompts with objective, constraints, and acceptance tests.",
-        "Require the agent to restate the requested outcome before coding.",
-        "Require explicit non-goals to avoid scope drift."
-      ],
+      "applies_to_personas": ["persona_beginner_senior", "persona_beginner_kid", "persona_hobbyist", "persona_advanced_builder"],
+      "applies_to_platforms": ["web", "mobile_ios", "mobile_android", "desktop", "backend_api", "embedded_iot", "game_console", "wearable", "voice_assistant"],
+      "guardrails": ["Require structured prompts with objective, constraints, and acceptance tests.", "Require the agent to restate the requested outcome before coding.", "Require explicit non-goals to avoid scope drift."],
       "evidence": [
         {
           "id": "evidence_risk_002_intentcoding_constraints_2026",
@@ -154,9 +80,7 @@
           "title": "IntentCoding: Amplifying User Intent in Code Generation",
           "organization_or_author": "Zheng Fang, Yihong Dong, Lili Mou, Dongming Jin, Zhi Jin, Ge Li",
           "url": "https://aclanthology.org/2026.findings-acl.1662/",
-          "supports": [
-            "risk_002.what_can_go_wrong[1] — In the studied code-generation benchmarks, standard decoding showed degraded adherence as the number of explicit user-intent constraints increased, demonstrating that generated code can fail to satisfy stated constraints."
-          ],
+          "supports_claims": [{"claim_id": "risk_002_claim_002", "basis": "In the studied code-generation benchmarks, standard decoding showed degraded adherence as the number of explicit user-intent constraints increased, demonstrating that generated code can fail to satisfy stated constraints."}],
           "limitations": "Peer-reviewed ACL 2026 benchmark evidence supports constraint-following failures under the studied code-generation setups, not universal failure across all models, prompts, languages, platforms, or constraint types. The inspected publication metadata/abstract does not justify labeling every omitted constraint as critical or claiming that a model wholly ignored it."
         },
         {
@@ -166,9 +90,9 @@
           "organization_or_author": "Di Yang, Xinou Xie, Xiuwen Yang, Ming Hu, Yihao Huang, Yueling Zhang, Weikai Miao, Ting Su, Chengcheng Wan, Geguang Pu",
           "url": "https://arxiv.org/abs/2604.21505",
           "publication_or_revision_date": "2026-04-23",
-          "supports": [
-            "risk_002.what_can_go_wrong[0] — In the studied Orchid benchmark, evaluated LLMs frequently produced functionally divergent implementations for the same ambiguous requirement.",
-            "risk_002.what_can_go_wrong[2] — In the studied Orchid benchmark, evaluated LLMs could fail to identify or resolve ambiguity autonomously."
+          "supports_claims": [
+            {"claim_id": "risk_002_claim_001", "basis": "In the studied Orchid benchmark, evaluated LLMs frequently produced functionally divergent implementations for the same ambiguous requirement."},
+            {"claim_id": "risk_002_claim_003", "basis": "In the studied Orchid benchmark, evaluated LLMs could fail to identify or resolve ambiguity autonomously."}
           ],
           "limitations": "Evidence is limited to the studied function-level benchmark and evaluated models; Orchid uses ambiguity variants across lexical, syntactic, semantic, and vagueness categories, and not every ambiguity necessarily changes generated behavior. It does not establish universal failure across languages, platforms, models, interactive clarification workflows, or real-world projects."
         }
@@ -178,34 +102,15 @@
       "id": "risk_003",
       "title": "Unsafe handling of secrets and personal data",
       "what_can_go_wrong": [
-        "Generated code can contain hard-coded credentials.",
-        "Personal data is logged or exposed.",
-        "LLM-generated Python web code can omit the Secure flag on cookies."
+        {"id": "risk_003_claim_001", "statement": "Generated code can contain hard-coded credentials."},
+        {"id": "risk_003_claim_002", "statement": "Personal data is logged or exposed."},
+        {"id": "risk_003_claim_003", "statement": "LLM-generated Python web code can omit the Secure flag on cookies."}
       ],
       "likelihood": "medium",
       "impact": "high",
-      "applies_to_personas": [
-        "persona_beginner_senior",
-        "persona_beginner_kid",
-        "persona_hobbyist",
-        "persona_advanced_builder"
-      ],
-      "applies_to_platforms": [
-        "web",
-        "mobile_ios",
-        "mobile_android",
-        "desktop",
-        "backend_api",
-        "embedded_iot",
-        "game_console",
-        "wearable",
-        "voice_assistant"
-      ],
-      "guardrails": [
-        "Never commit secrets; use secure secret stores.",
-        "Minimize collected data and redact logs by default.",
-        "Enforce encryption in transit and at rest where applicable."
-      ],
+      "applies_to_personas": ["persona_beginner_senior", "persona_beginner_kid", "persona_hobbyist", "persona_advanced_builder"],
+      "applies_to_platforms": ["web", "mobile_ios", "mobile_android", "desktop", "backend_api", "embedded_iot", "game_console", "wearable", "voice_assistant"],
+      "guardrails": ["Never commit secrets; use secure secret stores.", "Minimize collected data and redact logs by default.", "Enforce encryption in transit and at rest where applicable."],
       "evidence": [
         {
           "id": "evidence_risk_003_codexleaks_privacy_2023",
@@ -214,9 +119,7 @@
           "organization_or_author": "Liang Niu, Shujaat Mirza, Zayd Maradni, Christina Pöpper",
           "url": "https://www.usenix.org/conference/usenixsecurity23/presentation/niu",
           "version": "GitHub Copilot using the studied Codex model",
-          "supports": [
-            "risk_003.what_can_go_wrong[1] — In the studied GitHub Copilot/Codex setup, generated outputs exposed sensitive personal information from training data."
-          ],
+          "supports_claims": [{"claim_id": "risk_003_claim_002", "basis": "In the studied GitHub Copilot/Codex setup, generated outputs exposed sensitive personal information from training data."}],
           "limitations": "The study used carefully designed leakage-inducing prompt templates and a historical GitHub Copilot/Codex setup; approximately 8% (43) of the tested prompts yielded privacy leaks. It does not establish that ordinary prompts, other coding assistants, current Copilot models, all platforms, or logging behavior exhibit the same risk or prevalence."
         },
         {
@@ -226,9 +129,7 @@
           "organization_or_author": "Zedong Peng, Chenggang Wang, Shangyue Zhu",
           "url": "https://arxiv.org/abs/2607.12089",
           "publication_or_revision_date": "2026-07-13",
-          "supports": [
-            "risk_003.what_can_go_wrong[0] — In the studied LLMSecEval benchmark, generated code from five open models violated the hard-coded-credentials metamorphic relation in 651 of 823 applicable snippets (79.1%)."
-          ],
+          "supports_claims": [{"claim_id": "risk_003_claim_001", "basis": "In the studied LLMSecEval benchmark, generated code from five open models violated the hard-coded-credentials metamorphic relation in 651 of 823 applicable snippets (79.1%)."}],
           "limitations": "Benchmark-derived result limited to 3,700 Python/C snippets generated from 148 LLMSecEval prompts by five studied open models and evaluated with an LLM-based judge (Claude Sonnet 4.6). It does not establish prevalence for other models, languages, platforms, ordinary production prompts, current systems, or that any hard-coded credential is a valid real-world secret or was leaked or exploited."
         },
         {
@@ -238,9 +139,7 @@
           "organization_or_author": "Catherine Tony, Emanuele Iannone, Riccardo Scandariato",
           "url": "https://doi.org/10.1109/ICSME64153.2025.00041",
           "publication_or_revision_date": "2025-09-07",
-          "supports": [
-            "risk_003.what_can_go_wrong[2] — In the studied Python code-generation tasks, CodeQL-reported CWE-311 findings frequently manifested as generated cookie settings that omitted the Secure flag; the paper reports 13 such CWE-311 findings for GPT-4 under RAG and 7 for Gemini under RAG, with smaller counts in other evaluated conditions."
-          ],
+          "supports_claims": [{"claim_id": "risk_003_claim_003", "basis": "In the studied Python code-generation tasks, CodeQL-reported CWE-311 findings frequently manifested as generated cookie settings that omitted the Secure flag; the paper reports 13 such CWE-311 findings for GPT-4 under RAG and 7 for Gemini under RAG, with smaller counts in other evaluated conditions."}],
           "limitations": "Peer-reviewed ICSME 2025 evidence is limited to 221 Python tasks from SecurityEval and SALLM, GPT-4, Gemini, and DeepSeek-Coder, and the studied baseline/RCI/RAG/RCI+RAG prompting setups. The reported CWE-311 issue was frequently, not universally, missing Secure cookie flags. This evidence does not establish unencrypted storage, all transport-encryption failures, prevalence in production systems, or generalization to other languages, platforms, models, or current systems."
         }
       ]
@@ -249,29 +148,15 @@
       "id": "risk_004",
       "title": "Inaccessible or unusable UX",
       "what_can_go_wrong": [
-        "LLM-generated GUI applications can fail end-to-end interaction flows because of behavioral logic defects.",
-        "LLM-generated GUI mockups can use smaller text and abbreviated labels that reduce readability and introduce label ambiguity.",
-        "LLM-generated web code can omit alternative text needed by screen-reader users."
+        {"id": "risk_004_claim_001", "statement": "LLM-generated GUI applications can fail end-to-end interaction flows because of behavioral logic defects."},
+        {"id": "risk_004_claim_002", "statement": "LLM-generated GUI mockups can use smaller text and abbreviated labels that reduce readability and introduce label ambiguity."},
+        {"id": "risk_004_claim_003", "statement": "LLM-generated web code can omit alternative text needed by screen-reader users."}
       ],
       "likelihood": "medium",
       "impact": "medium",
-      "applies_to_personas": [
-        "persona_beginner_senior",
-        "persona_beginner_kid"
-      ],
-      "applies_to_platforms": [
-        "web",
-        "mobile_ios",
-        "mobile_android",
-        "desktop",
-        "wearable",
-        "voice_assistant"
-      ],
-      "guardrails": [
-        "Require simple language, clear feedback, and guided onboarding.",
-        "Require accessibility checks (contrast, focus, labels, navigation).",
-        "User-test with at least one true beginner persona before release."
-      ],
+      "applies_to_personas": ["persona_beginner_senior", "persona_beginner_kid"],
+      "applies_to_platforms": ["web", "mobile_ios", "mobile_android", "desktop", "wearable", "voice_assistant"],
+      "guardrails": ["Require simple language, clear feedback, and guided onboarding.", "Require accessibility checks (contrast, focus, labels, navigation).", "User-test with at least one true beginner persona before release."],
       "evidence": [
         {
           "id": "evidence_risk_004_chatgpt_web_accessibility_2024",
@@ -280,9 +165,7 @@
           "organization_or_author": "Wajdi Aljedaani, Abdulrahman Habib, Ahmed Aljohani, Marcelo Eler, Yunhe Feng",
           "url": "https://doi.org/10.1145/3677846.3677854",
           "publication_or_revision_date": "2024-05-13",
-          "supports": [
-            "risk_004.what_can_go_wrong[2] — In a study where 88 web developers prompted ChatGPT to generate websites, 74 of 88 generated websites had detected accessibility issues; the reported violations included missing image alt attributes, which the authors identify as important for screen-reader users."
-          ],
+          "supports_claims": [{"claim_id": "risk_004_claim_003", "basis": "In a study where 88 web developers prompted ChatGPT to generate websites, 74 of 88 generated websites had detected accessibility issues; the reported violations included missing image alt attributes, which the authors identify as important for screen-reader users."}],
           "limitations": "Peer-reviewed W4A 2024 evidence is limited to ChatGPT-generated web code in the studied prompting setup and automated accessibility checks. It does not establish that every generated website lacks accessibility support, that keyboard support is generally missing, or that the result generalizes to current models, non-web platforms, or all accessibility requirements; 14 of 88 studied websites had no detected accessibility issues."
         },
         {
@@ -292,9 +175,7 @@
           "organization_or_author": "Zhiyuan Peng, Wei Tao, Xin Yin, Chenhao Ying, Yuan Luo, Yiwen Guo",
           "url": "https://conf.researchr.org/details/fse-2026/fse-2026-research-papers/4/PlayCoder-Making-LLM-Generated-GUI-Code-Playable",
           "version": "FSE 2026 Research Papers; arXiv:2604.19742v1",
-          "supports": [
-            "risk_004.what_can_go_wrong[0] — In the studied repository-aware GUI code-generation benchmark, generated candidates from 10 evaluated code LLMs achieved near-zero Play@3 despite high compilation rates; Play@k requires an application to complete task-oriented end-to-end GUI playthroughs without logical errors."
-          ],
+          "supports_claims": [{"claim_id": "risk_004_claim_001", "basis": "In the studied repository-aware GUI code-generation benchmark, generated candidates from 10 evaluated code LLMs achieved near-zero Play@3 despite high compilation rates; Play@k requires an application to complete task-oriented end-to-end GUI playthroughs without logical errors."}],
           "limitations": "FSE 2026 benchmark evidence is limited to the studied repository-aware GUI applications, languages, models, and automated LLM-based PlayTester evaluation. It does not directly measure first-time human users, beginner personas, every core user flow, all UI platforms, or current/future models. Successful generated candidates existed, and the PlayCoder repair framework improved Play@3, so this supports a possibility-scoped behavioral-flow failure rather than universal failure."
         },
         {
@@ -305,9 +186,7 @@
           "url": "https://arxiv.org/abs/2601.22759",
           "publication_or_revision_date": "2026-01-30",
           "version": "arXiv:2601.22759v1",
-          "supports": [
-            "risk_004.what_can_go_wrong[1] — In the studied persona-adaptation experiment, an LLM-generated student-oriented GUI used smaller text and abbreviated labels; the authors report reduced readability and label ambiguity for that design."
-          ],
+          "supports_claims": [{"claim_id": "risk_004_claim_002", "basis": "In the studied persona-adaptation experiment, an LLM-generated student-oriented GUI used smaller text and abbreviated labels; the authors report reduced readability and label ambiguity for that design."}],
           "limitations": "Preprint evidence limited to 27 interactive GUI mock-ups generated with three studied models and evaluated by experts, plus a small persona-adaptation experiment. It does not establish universal unreadability, prevalence across generated interfaces, actual end-user comprehension failure, production-system behavior, every UI platform, or current/future model behavior; the same study also produced a senior-oriented variant with larger text and explicit labels."
         }
       ]
@@ -316,32 +195,15 @@
       "id": "risk_006",
       "title": "No release quality gate",
       "what_can_go_wrong": [
-        "AI-generated code can be shipped to production without line-by-line manual verification.",
-        "AI-agent-generated Python maintenance PRs can introduce potential breaking changes.",
-        "Missing telemetry can hinder incident diagnosis and troubleshooting."
+        {"id": "risk_006_claim_001", "statement": "AI-generated code can be shipped to production without line-by-line manual verification."},
+        {"id": "risk_006_claim_002", "statement": "AI-agent-generated Python maintenance PRs can introduce potential breaking changes."},
+        {"id": "risk_006_claim_003", "statement": "Missing telemetry can hinder incident diagnosis and troubleshooting."}
       ],
       "likelihood": "medium",
       "impact": "high",
-      "applies_to_personas": [
-        "persona_hobbyist",
-        "persona_advanced_builder"
-      ],
-      "applies_to_platforms": [
-        "web",
-        "mobile_ios",
-        "mobile_android",
-        "desktop",
-        "backend_api",
-        "embedded_iot",
-        "game_console",
-        "wearable",
-        "voice_assistant"
-      ],
-      "guardrails": [
-        "Define required checks for each goal type (hobby vs state-of-the-art).",
-        "Require staged release with rollback strategy.",
-        "Require baseline logging, monitoring, and error reporting."
-      ],
+      "applies_to_personas": ["persona_hobbyist", "persona_advanced_builder"],
+      "applies_to_platforms": ["web", "mobile_ios", "mobile_android", "desktop", "backend_api", "embedded_iot", "game_console", "wearable", "voice_assistant"],
+      "guardrails": ["Define required checks for each goal type (hobby vs state-of-the-art).", "Require staged release with rollback strategy.", "Require baseline logging, monitoring, and error reporting."],
       "evidence": [
         {
           "id": "evidence_risk_006_newrelic_unverified_production_2026",
@@ -350,9 +212,7 @@
           "organization_or_author": "New Relic; survey conducted by Hanover Research",
           "url": "https://newrelic.com/resources/report/2026-state-of-ai-coding",
           "publication_or_revision_date": "2026-06-10",
-          "supports": [
-            "risk_006.what_can_go_wrong[0] - In the 2026 Hanover Research survey commissioned by New Relic, 62% of surveyed technology leaders reported that their engineering teams often trusted AI-generated code enough to ship it to production without line-by-line manual verification."
-          ],
+          "supports_claims": [{"claim_id": "risk_006_claim_001", "basis": "In the 2026 Hanover Research survey commissioned by New Relic, 62% of surveyed technology leaders reported that their engineering teams often trusted AI-generated code enough to ship it to production without line-by-line manual verification."}],
           "limitations": "Vendor-commissioned self-report survey of 200 U.S.-based full-time technology decision-makers in IT/Engineering at upper-mid-market and enterprise companies using generative and agentic AI in software engineering. It does not establish that the shipped code was prototype code, that every deployment lacked other quality gates, or that the result generalizes to smaller organizations, other countries, all teams, or future practice."
         },
         {
@@ -362,9 +222,7 @@
           "organization_or_author": "K M Ferdous, Dipayan Banik, Kowshik Chowdhury, Shazibul Islam Shamim",
           "url": "https://doi.org/10.1145/3793302.3793610",
           "publication_or_revision_date": "2026-04-13",
-          "supports": [
-            "risk_006.what_can_go_wrong[1] — In the studied AIDev Python repositories, agent-generated PR patches contained statically detected potential breaking changes; maintenance-oriented refactor and chore patches had reported potential-breaking-change rates of 6.72% and 9.35%, respectively."
-          ],
+          "supports_claims": [{"claim_id": "risk_006_claim_002", "basis": "In the studied AIDev Python repositories, agent-generated PR patches contained statically detected potential breaking changes; maintenance-oriented refactor and chore patches had reported potential-breaking-change rates of 6.72% and 9.35%, respectively."}],
           "limitations": "Peer-reviewed MSR 2026 evidence is limited to Python repositories and the AIDev dataset, and measures potential breaking changes detected from reconstructed patches with an AST-based tool rather than confirmed downstream user breakage. The study found lower potential-breaking-change rates for agentic patches than human patches overall, so this supports only a possibility-scoped maintenance-PR claim. It does not establish that breaking changes reached users, that rollback was unavailable, or that the rates generalize to other languages, repositories, agents, or current systems."
         },
         {
@@ -373,37 +231,15 @@
           "title": "Observability primer",
           "organization_or_author": "OpenTelemetry",
           "url": "https://opentelemetry.io/docs/concepts/observability-primer/",
-          "supports": [
-            "risk_006.what_can_go_wrong[2] — OpenTelemetry states that observability enables troubleshooting and answering why system behavior occurs, and that applications must emit telemetry signals such as traces, metrics, and logs to support those questions; missing telemetry can therefore hinder diagnosis and troubleshooting."
-          ],
+          "supports_claims": [{"claim_id": "risk_006_claim_003", "basis": "OpenTelemetry states that observability enables troubleshooting and answering why system behavior occurs, and that applications must emit telemetry signals such as traces, metrics, and logs to support those questions; missing telemetry can therefore hinder diagnosis and troubleshooting."}],
           "limitations": "Official conceptual documentation, not an empirical study of AI-generated software or a proof that incidents become impossible to diagnose. Other evidence sources can sometimes permit diagnosis even when application telemetry is incomplete; this supports `can hinder`, not the former absolute `cannot be diagnosed` wording."
         }
       ]
     }
   ],
   "goal_quality_gates": {
-    "hobby_project": {
-      "minimum_requirements": [
-        "No hardcoded secrets",
-        "Basic functional test of core flow",
-        "Clear disclaimer that reliability is best effort"
-      ]
-    },
-    "personal_utility": {
-      "minimum_requirements": [
-        "Automated tests for critical paths",
-        "Backup and recovery plan for user data",
-        "Authentication for private data"
-      ]
-    },
-    "state_of_the_art_product": {
-      "minimum_requirements": [
-        "Threat model and security review",
-        "Comprehensive CI with tests and static analysis",
-        "Performance and accessibility budgets",
-        "Observability and incident response runbook",
-        "Cross-platform compatibility matrix"
-      ]
-    }
+    "hobby_project": {"minimum_requirements": ["No hardcoded secrets", "Basic functional test of core flow", "Clear disclaimer that reliability is best effort"]},
+    "personal_utility": {"minimum_requirements": ["Automated tests for critical paths", "Backup and recovery plan for user data", "Authentication for private data"]},
+    "state_of_the_art_product": {"minimum_requirements": ["Threat model and security review", "Comprehensive CI with tests and static analysis", "Performance and accessibility budgets", "Observability and incident response runbook", "Cross-platform compatibility matrix"]}
   }
 }
