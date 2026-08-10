@@ -336,7 +336,10 @@
         "Use clear, easy-to-understand language in user-facing content.",
         "Provide clear feedback for user actions, errors, and task completion.",
         "Provide clear step-by-step instructions for unfamiliar or error-prone workflows where needed.",
-        "Require accessibility checks (contrast, focus, labels, navigation).",
+        "Check visual contrast against applicable accessibility requirements when the interface presents visual text or controls.",
+        "Check focus order and visible focus indicators when the interface supports keyboard or keyboard-equivalent focus navigation.",
+        "Check that headings, controls, and user inputs have appropriate labels or instructions where those elements are present.",
+        "Check navigation mechanisms against applicable accessibility requirements where the interface provides navigation.",
         "Conduct usability testing with representative actual or likely users, including novice users when they are part of the target audience, at appropriate stages throughout development."
       ],
       "evidence": [
