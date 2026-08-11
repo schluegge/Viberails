@@ -79,7 +79,7 @@
         "voice_assistant"
       ],
       "guardrails": [
-        "Require executable tests for generated logic before release.",
+        "Before release, execute tests that verify documented behavior affected by generated code against expected results.",
         "Use applicable static analysis tools to analyze project code for security-relevant defects, selecting tools that support the project's languages, frameworks, and build context.",
         "When the project includes third-party software components, identify those components and check them for known vulnerabilities using mechanisms that support the relevant component or package ecosystems.",
         "Require human review before release for generated code that affects security-sensitive behavior."
