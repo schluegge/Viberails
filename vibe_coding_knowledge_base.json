@@ -219,7 +219,7 @@
         },
         {
           "id": "risk_003_claim_002",
-          "statement": "Personal data is logged or exposed."
+          "statement": "Code-generation models can expose sensitive personal information from training data in generated outputs."
         },
         {
           "id": "risk_003_claim_003",
