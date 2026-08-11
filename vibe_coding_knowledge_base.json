@@ -483,7 +483,7 @@
   "goal_quality_gates": {
     "hobby_project": {
       "minimum_requirements": [
-        "No hardcoded secrets",
+        "Do not hard-code secrets or credentials in source code or distributable artifacts; if an embedded credential cannot be removed, document the necessity and restrict access to the affected functionality.",
         "Execute a functional test that verifies the product-defined core functionality against documented expected behavior."
       ]
     },
