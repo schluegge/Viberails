@@ -504,7 +504,7 @@
         "Define the accessibility requirements applicable to the product and verify conformance using the relevant standard, policy, or acceptance criteria.",
         "Verify that released software provides the telemetry needed to diagnose operational failures and assess operational health.",
         "Establish, communicate, and maintain incident response procedures appropriate to plausible operational and security incidents, including roles, communication, escalation, and recovery actions as applicable.",
-        "Define the supported platforms and environments, and verify compatibility across the combinations the product claims to support."
+        "Define supported platforms and environments, and verify each explicit support claim using a documented compatibility test matrix; when a supported space contains many hardware, software, or environment variants, select configurations using representative, risk-based, combinatorial, or otherwise required coverage criteria."
       ]
     }
   }
