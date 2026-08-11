@@ -492,7 +492,7 @@
       "minimum_requirements": [
         "Automate tests for documented product behaviors selected as critical based on the impact of failure on the utility's intended use, user data, privacy, or security.",
         "When loss of user data would violate defined recovery objectives and the data cannot be acceptably reproduced from another source, maintain backups and periodically test restoration.",
-        "Protect private data from unauthorized access using controls appropriate to the application's trust boundaries, including authentication when access decisions depend on user identity."
+        "Enforce access controls that prevent unauthorized access to private data at the application's trust boundaries; when authorization depends on a claimed user identity, authenticate that identity before using it to grant access."
       ]
     },
     "state_of_the_art_product": {
