@@ -59,7 +59,7 @@
           "statement": "Security vulnerabilities are introduced."
         }
       ],
-      "likelihood": "high",
+      "likelihood": "unknown",
       "impact": "high",
       "applies_to_personas": [
         "persona_beginner_senior",

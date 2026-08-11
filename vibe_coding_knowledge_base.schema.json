@@ -100,10 +100,12 @@
           },
           "likelihood": {
             "type": "string",
+            "description": "Qualitative likelihood rating; use unknown when available evidence does not justify an ordinal low, medium, or high classification.",
             "enum": [
               "low",
               "medium",
-              "high"
+              "high",
+              "unknown"
             ]
           },
           "impact": {
