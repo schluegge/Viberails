@@ -82,7 +82,7 @@
         "Before release, execute tests that verify documented behavior affected by generated code against expected results.",
         "Use applicable static analysis tools to analyze project code for security-relevant defects, selecting tools that support the project's languages, frameworks, and build context.",
         "When the project includes third-party software components, identify those components and check them for known vulnerabilities using mechanisms that support the relevant component or package ecosystems.",
-        "Require human review before release for generated code that affects security-sensitive behavior."
+        "Before release, have a human reviewer evaluate generated changes that implement or modify security controls against documented security requirements, using automated security analysis and testing as complementary evidence."
       ],
       "evidence": [
         {
